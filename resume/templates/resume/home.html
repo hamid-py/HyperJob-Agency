@@ -1,0 +1,30 @@
+<!--<form  method="post">{% csrf_token %}-->
+<!--  <button type="submit" name="resume" value="resume">new resume</button>-->
+<!--</form>-->
+
+<!--<form  method="post">{% csrf_token %}-->
+<!--  <button type="submit" name="vacancy" value="vacancy">new vacancy</button>-->
+<!--</form>-->
+{%if staff%}
+<h1>Create New Vacancy</h1>
+<form method="post" action="/vacancy/new/">{% csrf_token %}
+  <table>{{ form.as_table }}</table>
+  <button type="submit">Submit</button>
+</form>
+{%else%}
+<h1>Create New Resume</h1>
+<form method="post" action="/resume/new">{% csrf_token %}
+  <table>{{ form.as_table }}</table>
+  <button type="submit">Submit</button>
+</form>
+{%endif%}
+<!--<form action="2" method="post">{% csrf_token %}-->
+<!--  <button type="submit">new vacancy</button>-->
+<!--</form>-->
+
+<!--{%for resume in resume_list %}-->
+<!--<div>{{resume.author}}: {{resume.description}}</div>-->
+<!--{%endfor%}-->
+<!--{%for vacancy in vacancy_list %}-->
+<!--<div>{{vacancy.author}}: {{vacancy.description}}</div>-->
+<!--{%endfor%}-->

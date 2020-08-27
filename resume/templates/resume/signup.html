@@ -1,0 +1,9 @@
+<!--  <form method="post" action="signup">{% csrf_token %}-->
+<!--    <table>{{ form.as_table }}</table>-->
+<!--    <button type="submit">Send</button>-->
+<!--  </form>-->
+
+<form method="post">{% csrf_token %}
+  <table>{{ signupform.as_table }}</table>
+  <button type="submit">Submit</button>
+</form>
